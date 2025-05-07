@@ -40,7 +40,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium mb-1">Location</h3>
-                      <p className="text-zinc-400">San Francisco, CA</p>
+                      <p className="text-zinc-400"> MP, Bhaarat </p>
                     </div>
                     <div>
                       <h3 className="text-lg font-medium mb-1">Follow Us</h3>

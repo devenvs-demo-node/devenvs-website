@@ -9,6 +9,15 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { CheckCircle2 } from "lucide-react"
 
+// Import the Firebase app instance
+import { app } from "./firebase-config";
+
+// Import Realtime Database functions
+import { getDatabase, ref, push } from "firebase/database";
+
+// Get the database instance
+const db = getDatabase(app); // Moved outside the component if app is initialized once
+
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -44,16 +53,16 @@ export default function ContactForm() {
       isValid = false
     }
 
+    // Basic email validation
     if (!formData.email.trim()) {
       newErrors.email = "Email is required"
       isValid = false
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid"
-      isValid = false
-    } else if (!formData.email.includes("@") || !formData.email.includes(".")) {
+       // A simple regex is generally more robust than just checking for @ and .
       newErrors.email = "Email is invalid"
       isValid = false
     }
+
 
     if (!formData.message.trim()) {
       newErrors.message = "Message is required"
@@ -70,33 +79,60 @@ export default function ContactForm() {
       ...prev,
       [name]: value,
     }))
+    // Clear error for the field when user starts typing
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (!validateForm()) {
+      console.log("Form validation failed"); // Optional: Log validation failure
       return
     }
 
     setIsSubmitting(true)
 
-    // Simulate form submission
     try {
-      // In a real implementation, you would send the form data to your backend
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-      setIsSubmitted(true)
-      // Reset form
+      // Create a reference to the 'contactSubmissions' node
+      const contactSubmissionsRef = ref(db, 'contactSubmissions');
+
+      // Add the form data to the database using push()
+      // This automatically creates a unique key for each submission
+      await push(contactSubmissionsRef, {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        message: formData.message,
+        timestamp: Date.now(), // Add a timestamp
+      });
+
+      console.log("Form data successfully pushed to Realtime Database!");
+
+      setIsSubmitted(true);
+      // Reset form after successful submission
       setFormData({
         firstName: "",
         lastName: "",
         email: "",
         message: "",
-      })
+      });
+      setErrors({ // Also clear errors
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+      });
+
     } catch (error) {
-      console.error("Error submitting form:", error)
+      console.error("Error submitting form to Firebase:", error);
+      // Optionally, set a submission error state to show the user
+      // setError("Failed to send message. Please try again.");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
   }
 
