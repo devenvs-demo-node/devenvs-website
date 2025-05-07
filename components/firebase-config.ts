@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDnXzqL0HdNvQSOHf5pLIvXOuaiptFtwLo",
+  apiKey: process.env.API_KEY,
   authDomain: "devenvs10.firebaseapp.com",
   databaseURL: "https://devenvs10-default-rtdb.firebaseio.com",
   projectId: "devenvs10",
