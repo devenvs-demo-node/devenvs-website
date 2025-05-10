@@ -32,22 +32,22 @@ export default function Footer() {
             <h3 className="font-medium mb-4">Product</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link href="/features" className="text-zinc-400 hover:text-white transition-colors text-sm">
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link href="/pricing" className="text-zinc-400 hover:text-white transition-colors text-sm">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link href="/integrations" className="text-zinc-400 hover:text-white transition-colors text-sm">
                   Integrations
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link href="/changelog" className="text-zinc-400 hover:text-white transition-colors text-sm">
                   Changelog
                 </Link>
               </li>
@@ -58,22 +58,28 @@ export default function Footer() {
             <h3 className="font-medium mb-4">Resources</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link
+                  href="/resources/documentation"
+                  className="text-zinc-400 hover:text-white transition-colors text-sm"
+                >
                   Documentation
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link
+                  href="/resources/api-reference"
+                  className="text-zinc-400 hover:text-white transition-colors text-sm"
+                >
                   API Reference
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link href="/resources/blog" className="text-zinc-400 hover:text-white transition-colors text-sm">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link href="/resources/community" className="text-zinc-400 hover:text-white transition-colors text-sm">
                   Community
                 </Link>
               </li>
@@ -84,22 +90,25 @@ export default function Footer() {
             <h3 className="font-medium mb-4">Company</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link href="/company/about" className="text-zinc-400 hover:text-white transition-colors text-sm">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link href="/company/careers" className="text-zinc-400 hover:text-white transition-colors text-sm">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link href="/contact" className="text-zinc-400 hover:text-white transition-colors text-sm">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+                <Link
+                  href="/company/privacy-policy"
+                  className="text-zinc-400 hover:text-white transition-colors text-sm"
+                >
                   Privacy Policy
                 </Link>
               </li>
@@ -110,13 +119,13 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-zinc-400 text-sm">© {new Date().getFullYear()} DevEnvs. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+            <Link href="/company/privacy-policy" className="text-zinc-400 hover:text-white transition-colors text-sm">
               Terms of Service
             </Link>
-            <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+            <Link href="/company/privacy-policy" className="text-zinc-400 hover:text-white transition-colors text-sm">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">
+            <Link href="/company/privacy-policy" className="text-zinc-400 hover:text-white transition-colors text-sm">
               Cookie Policy
             </Link>
           </div>

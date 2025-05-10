@@ -11,13 +11,13 @@ export default function Header() {
             <DevEnvsLogo />
           </Link>
           <nav className="hidden md:flex gap-6">
-            <Link href="#product" className="text-sm text-zinc-400 hover:text-white transition-colors">
+            <Link href="/product" className="text-sm text-zinc-400 hover:text-white transition-colors">
               Product
             </Link>
-            <Link href="#resources" className="text-sm text-zinc-400 hover:text-white transition-colors">
+            <Link href="/resources" className="text-sm text-zinc-400 hover:text-white transition-colors">
               Resources
             </Link>
-            <Link href="#pricing" className="text-sm text-zinc-400 hover:text-white transition-colors">
+            <Link href="/pricing" className="text-sm text-zinc-400 hover:text-white transition-colors">
               Pricing
             </Link>
             <Link href="/contact" className="text-sm text-zinc-400 hover:text-white transition-colors">
