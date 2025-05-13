@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import Link from "next/link"
 
 export default function FinalCta() {
   const [ref, inView] = useInView({
@@ -34,10 +35,19 @@ export default function FinalCta() {
               Join the teams that are shipping faster with DevEnvs. Create your first ephemeral environment today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <Button className="bg-[#5E5AFF] hover:bg-[#4A46FF] text-white h-12 px-8">Get started for free</Button>
-              <Button variant="outline" className="h-12 px-8 border-zinc-800 text-zinc-400 hover:text-white">
-                Schedule a demo
-              </Button>
+              <Link href="/get-started">
+                <Button className="bg-[#5E5AFF] hover:bg-[#4A46FF] text-white h-12 px-8 w-full sm:w-auto">
+                  Get started for free
+                </Button>
+              </Link>
+              <Link href="/schedule-demo">
+                <Button
+                  variant="outline"
+                  className="h-12 px-8 border-zinc-800 text-zinc-400 hover:text-white w-full sm:w-auto"
+                >
+                  Schedule a demo
+                </Button>
+              </Link>
             </div>
           </div>
         </motion.div>

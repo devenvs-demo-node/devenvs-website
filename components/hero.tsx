@@ -2,6 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Link from "next/link"
+
 
 export default function Hero() {
   return (
@@ -22,15 +24,19 @@ export default function Hero() {
             Accelerate your development workflow with DevEnvs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
-            <Button className="bg-[#5E5AFF] hover:bg-[#4A46FF] text-white h-12 px-8">
-              Get started
-            </Button>
-            <Button
-              variant="outline"
-              className="h-12 px-8 border-zinc-800 text-zinc-400 hover:text-white"
-            >
+            <Link href="/get-started">
+              <Button className="bg-[#5E5AFF] hover:bg-[#4A46FF] text-white h-12 px-8 w-full sm:w-auto">
+                Get started
+              </Button>
+            </Link>
+            <Link href="/schedule-demo">
+              <Button
+                variant="outline"
+                className="h-12 px-8 border-zinc-800 text-zinc-400 hover:text-white w-full sm:w-auto"
+              >
               Book a demo
             </Button>
+            </Link>
           </div>
         </motion.div>
         <motion.div

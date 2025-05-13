@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { DevEnvsLogo } from "@/components/devenvs-logo"
@@ -26,10 +28,19 @@ export default function Header() {
           </nav>
         </div>
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="text-zinc-400 hover:text-white">
+          <Button
+            variant="ghost"
+            className="text-zinc-400 hover:text-white"
+            onClick={() => (window.location.href = "https://devenvs-io.github.io/dashboard/auth/login")}
+          >
             Log in
           </Button>
-          <Button className="bg-[#5E5AFF] hover:bg-[#4A46FF] text-white">Sign up</Button>
+          <Button
+            className="bg-[#5E5AFF] hover:bg-[#4A46FF] text-white"
+            onClick={() => (window.location.href = "https://devenvs-io.github.io/dashboard/auth/register")}
+          >
+            Sign up
+          </Button>
         </div>
       </div>
     </header>
