@@ -26,7 +26,7 @@ export default function Features() {
           title="Born to innovate, forced to wait for staging Environment?"
           description="No More, With DevEnvs."
           icon={<Zap className="w-10 h-10 text-[#5E5AFF]" />}
-          imageUrl="/deploy.png?height=400&width=500"
+          imageUrl={`${prefix}/deploy.png`}
           imageAlt="Issue detection in developer environment"
           reversed={true}
         />
@@ -35,7 +35,6 @@ export default function Features() {
           title="Early Issue Detection"
           description="Identify and address issues early in your development cycle. Catch bugs before they reach production."
           icon={<Bug className="w-10 h-10 text-[#5E5AFF]" />}
-          // imageUrl="/prometheus.png?height=400&width=500"
           imageUrl={`${prefix}/prometheus.png`}
           imageAlt="Fast development workflow"
           reversed={false}
@@ -44,8 +43,7 @@ export default function Features() {
         <FeatureRow
           title="Boost Your Productivity"
           description="Eliminate environment setup time. Focus on writing code, not configuring infrastructure."
-          icon={<Rocket className="w-10 h-10 text-[#5E5AFF]" />}  
-          // imageUrl="/fail-build-ship.png?height=400&width=500"
+          icon={<Rocket className="w-10 h-10 text-[#5E5AFF]" />}
           imageUrl={`${prefix}/fail-build-ship.png`}
           imageAlt="Productivity boost with ephemeral environments"
           reversed={true}
@@ -55,7 +53,6 @@ export default function Features() {
           title="Fail Fast, Build Fast, Ship Faster"
           description="Accelerate your development workflow. Iterate quickly and ship with confidence."
           icon={<Zap className="w-10 h-10 text-[#5E5AFF]" />}
-          // imageUrl="/devenvs.png?height=400&width=500"
           imageUrl={`${prefix}/devenvs.png`}
           imageAlt="Fast development workflow"
           reversed={false}
