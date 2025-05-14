@@ -6,6 +6,8 @@ import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Code, Zap, Bug, Rocket } from "lucide-react"
 
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ""
+
 export default function Features() {
   return (
     <section className="py-20 overflow-hidden">
@@ -15,7 +17,7 @@ export default function Features() {
           title="No More Staging Bottlenecks"
           description="DevEnvs gives developers an instant environment. So they can test code changes without waiting in the queue to test on staging environment for hours or days."
           icon={<Code className="w-10 h-10 text-[#5E5AFF]" />}
-          imageUrl="/staging.png?height=400&width=500"
+          imageUrl={`${prefix}/staging.png`}
           imageAlt="Developer deploying an environment"
           reversed={false}
         />
@@ -33,7 +35,8 @@ export default function Features() {
           title="Early Issue Detection"
           description="Identify and address issues early in your development cycle. Catch bugs before they reach production."
           icon={<Bug className="w-10 h-10 text-[#5E5AFF]" />}
-          imageUrl="/prometheus.png?height=400&width=500"
+          // imageUrl="/prometheus.png?height=400&width=500"
+          imageUrl={`${prefix}/prometheus.png`}
           imageAlt="Fast development workflow"
           reversed={false}
         />
@@ -42,7 +45,8 @@ export default function Features() {
           title="Boost Your Productivity"
           description="Eliminate environment setup time. Focus on writing code, not configuring infrastructure."
           icon={<Rocket className="w-10 h-10 text-[#5E5AFF]" />}  
-          imageUrl="/fail-build-ship.png?height=400&width=500"
+          // imageUrl="/fail-build-ship.png?height=400&width=500"
+          imageUrl={`${prefix}/fail-build-ship.png`}
           imageAlt="Productivity boost with ephemeral environments"
           reversed={true}
         />
@@ -51,7 +55,8 @@ export default function Features() {
           title="Fail Fast, Build Fast, Ship Faster"
           description="Accelerate your development workflow. Iterate quickly and ship with confidence."
           icon={<Zap className="w-10 h-10 text-[#5E5AFF]" />}
-          imageUrl="/devenvs.png?height=400&width=500"
+          // imageUrl="/devenvs.png?height=400&width=500"
+          imageUrl={`${prefix}/devenvs.png`}
           imageAlt="Fast development workflow"
           reversed={false}
         />

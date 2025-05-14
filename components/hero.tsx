@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link"
 
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ""
+
 
 export default function Hero() {
   return (
@@ -53,7 +55,7 @@ export default function Hero() {
               // playsInline
               className="w-full h-full object-contain"
             >
-              <source src="/devenvs-demo.mp4" type="video/mp4" />
+              <source src={`${prefix}/devenvs-demo.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
